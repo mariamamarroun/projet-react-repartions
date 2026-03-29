@@ -80,7 +80,7 @@ const Home = () => {
       <CategoriesSection />
 
       {/* SECTION PRODUITS */}
-      <main className="main-content bg-white">
+      <main className="main-content !bg-primary">
         <section className="product-section">
           <div className="section-header">
              <h2>Nos Produits en Stock</h2>

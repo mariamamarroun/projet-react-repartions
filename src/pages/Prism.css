@@ -130,7 +130,7 @@ body {
 
 /* --- MAIN CONTENT (Remplit toute la droite) --- */
 .main-content {
-  background: #fff; /* changed from dark to white */
+  background: #0929b6; /* changed from dark to white */
   position: relative;
   z-index: 20;
 }
