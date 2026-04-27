@@ -106,7 +106,7 @@ const CategoriesSection = () => {
                 {name}
               </motion.p>
             </motion.div>
-            );
+            );F
           })}
         </motion.div>
       </div>

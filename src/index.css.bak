@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #050505; 
+  color: white;
+  overflow-x: hidden;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: rgba(154, 30, 255, 0.8);
+  backdrop-filter: blur(10px); /* CORRIGÉ : avec le tiret */
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav a {
+  color: #e0e0e0;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.page {
+  padding: 30px;
+  margin: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03); 
+  backdrop-filter: blur(5px); /* CORRIGÉ : avec le tiret */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+/* Vos utilitaires */
+.categories { display: flex !important; gap: 15px; flex-wrap: wrap; }
+.hero { width: 200px; height: auto; border-radius: 10px; }
+
+/* Styles CRUD */
+input, textarea {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+ul li {
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

@@ -20,7 +20,7 @@
 
 /* Version sombre si nécessaire */
 .repair-theme .step-circle-container {
-    background-color: #aed309;
+    background-color: #1a1a1a;
     border-color: #333;
 }
 

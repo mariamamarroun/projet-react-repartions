@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-grid">
         <div className="footer-col branding">
           <h4>PRISM REPAIR</h4>
-          <p>Votre partenaire pour la réparation électronique en Tunisie.</p>
+          <p>Votre partenaire pour la réparation électronique en Maroc.</p>
         </div>
         <div className="footer-col links">
           <h4>Liens utiles</h4>
