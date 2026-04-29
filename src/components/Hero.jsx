@@ -1,92 +1,128 @@
-import hero from '../assets/hero-bg.jpg';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
-    const imageUrl="https://images.unsplash.com/photo-1729883596874-4372ae94435f?w=1920&h=600&fit=crop";
+  const imageUrl =
+    "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1920";
 
   return (
-    <div style={{
-      ...styles.hero,
-      backgroundImage: `linear-gradient(135deg, rgba(82, 39, 255, 0.8), rgba(0, 112, 255, 0.8)), url(${imageUrl})`
-    }}>
-      <div style={styles.content}>
-        <h1 style={styles.title}>Pièces de Réparation <br /> Électronique</h1>
-        <p style={styles.description}>
-          Trouvez toutes les pièces détachées et outils professionnels
-          pour réparer vos appareils électroniques
-        </p>
-        <div style={styles.buttons}>
-          <button style={styles.primary}>
-            Voir les produits <ChevronRight size={20} />
-          </button>
-          <button style={styles.secondary}>Guides de réparation</button>
-        </div>
+    <div style={styles.wrapper}>
+      <div
+        style={{
+          ...styles.hero,
+          backgroundImage: `
+          linear-gradient(135deg, rgba(108,59,255,0.9), rgba(15,15,26,0.95)),
+          url(${imageUrl})
+        `,
+        }}
+      >
+        <motion.div
+          style={styles.content}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+        >
+          <h1 style={styles.title}>
+            Professional Electronic <br /> Repair Services
+          </h1>
+
+          <p style={styles.description}>
+            High-quality components and tools to repair your devices with
+            precision, speed, and reliability.
+          </p>
+
+          <div style={styles.buttons}>
+            <motion.button
+              style={styles.primary}
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View Products <ChevronRight size={20} />
+            </motion.button>
+
+            <motion.button
+              style={styles.secondary}
+              whileHover={{ scale: 1.05 }}
+            >
+              Repair Guides
+            </motion.button>
+          </div>
+        </motion.div>
       </div>
     </div>
-  ); 
+  );
 }
 
 const styles = {
+  wrapper: {
+    overflow: "hidden",
+  },
+
   hero: {
-    minHeight: '400px',
-    height: '60vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    position: 'relative',
-    zIndex: 0
+    height: "80vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    position: "relative",
+    transform: "scale(1.05)", // subtle zoom effect 🔥
   },
+
   content: {
-    maxWidth: '700px',
-    color: 'white',
-    textAlign: 'center',
-    zIndex: 1
+    textAlign: "center",
+    color: "#FFFFFF",
+    maxWidth: "720px",
+    padding: "0 20px",
   },
+
   title: {
-    fontSize: '48px',
-    fontWeight: 'bold',
-    marginBottom: '20px',
-    textShadow: '2px 2px 8px rgba(0,0,0,0.3)'
+    fontSize: "56px",
+    fontWeight: "800",
+    marginBottom: "20px",
+    lineHeight: "1.2",
+    letterSpacing: "1px",
   },
+
   description: {
-    fontSize: '18px',
-    marginBottom: '30px',
-    lineHeight: '1.6',
-    textShadow: '1px 1px 4px rgba(0,0,0,0.2)'
+    fontSize: "18px",
+    opacity: 0.85,
+    marginBottom: "35px",
+    lineHeight: "1.6",
   },
+
   buttons: {
-    marginTop: '30px',
-    display: 'flex',
-    gap: '15px',
-    justifyContent: 'center',
-    flexWrap: 'wrap'
+    display: "flex",
+    justifyContent: "center",
+    gap: "15px",
+    flexWrap: "wrap",
   },
+
   primary: {
-    background: 'white',
-    color: '#5227FF',
-    padding: '12px 24px',
-    borderRadius: '8px',
-    border: 'none',
-    cursor: 'pointer',
-    fontWeight: 'bold',
-    fontSize: '16px',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '8px',
-    transition: 'all 0.3s ease',
-    boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+    background: "linear-gradient(135deg, #6C3BFF, #A78BFA)",
+    color: "#FFFFFF",
+    padding: "14px 30px",
+    borderRadius: "14px",
+    border: "none",
+    fontWeight: "600",
+    fontSize: "16px",
+    cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+    boxShadow: "0 10px 35px rgba(108,59,255,0.6)",
+    transition: "all 0.3s ease",
   },
+
   secondary: {
-    background: 'transparent',
-    color: 'white',
-    border: '2px solid white',
-    padding: '12px 24px',
-    borderRadius: '8px',
-    cursor: 'pointer',
-    fontWeight: 'bold',
-    fontSize: '16px',
-    transition: 'all 0.3s ease'
-  }
+    background: "transparent",
+    border: "1px solid #A78BFA",
+    color: "#A78BFA",
+    padding: "14px 30px",
+    borderRadius: "14px",
+    fontWeight: "600",
+    fontSize: "16px",
+    cursor: "pointer",
+    transition: "all 0.3s ease",
+  },
 };
